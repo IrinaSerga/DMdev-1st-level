@@ -1,4 +1,4 @@
-package com.demdev.cs.lesson7;
+package com.dmdev.cs.lesson7;
 
 public class Lesson7Runner {
 

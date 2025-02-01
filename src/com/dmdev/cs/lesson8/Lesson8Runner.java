@@ -1,4 +1,4 @@
-package com.demdev.cs.lesson8;
+package com.dmdev.cs.lesson8;
 
 public class Lesson8Runner {
 
