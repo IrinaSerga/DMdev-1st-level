@@ -21,19 +21,26 @@ public class Task1 {
 
     }
 
-    public static void getQuarter(int minutes) {
+    private static void getQuarter(int minutes) {
         //1я четверть 0-14
-        if (0 <= minutes && minutes <= 14) {
+        if (isRange(minutes, 0, 15))  {
             System.out.println("Quarter first");
             //2я четверть 15-29
-        } else if (15 <= minutes && minutes <= 29) {
+        } else if (isRange(minutes, 15, 30)) {
             System.out.println("Quarter second");
             //3я четверть 30-44
-        } else if (30 <= minutes && minutes <= 44) {
+        } else if (isRange(minutes, 30, 45)) {
             System.out.println("Quarter third");
             //4я четверть 45-59
-        } else if (45 <= minutes && minutes <= 59) {
+        } else if (isRange(minutes, 45, 60)) {
             System.out.println("Quarter fourth");
         }
     }
+
+
+
+    private static boolean isRange(int value, int begin, int endExcluded) {
+        return begin <= value && value < endExcluded;
+    }
 }
+
