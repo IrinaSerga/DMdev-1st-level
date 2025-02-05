@@ -1,4 +1,4 @@
-package com.dmdev.cs.homeTask.HT1;
+package com.dmdev.cs.practice1;
 
 
 import java.util.Scanner;
@@ -16,7 +16,7 @@ import java.util.Scanner;
  * - функция discriminant, вычисляющая дискриминант
  * Обращайте внимание, что параметры все целочисленные, а корни могут иметь дробную часть.
  */
-public class PracticeTask1_2 { public static void main(String[] args) {
+public class Task2 { public static void main(String[] args) {
     Scanner scanner = new Scanner(System.in);
     System.out.println("Input a: ");
     int a = scanner.nextInt();

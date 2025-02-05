@@ -1,4 +1,4 @@
-package com.dmdev.cs.homeTask.HT1;
+package com.dmdev.cs.practice1;
 
 
 import java.util.Scanner;
@@ -11,7 +11,7 @@ import java.util.Scanner;
  * Форматирование строки "День.Месяц.Год" вынести в отдельную функцию.
  */
 
-public class PracticeTask1_1 {
+public class Task1 {
 
     public static void main(String[] args) {
 
