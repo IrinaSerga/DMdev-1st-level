@@ -21,7 +21,7 @@ public class Task2 {
     private static int[] convertCharToNumber(char[] array) {
         int[] numbers = new int[array.length]; // длина та же что и у исходного
         for (int i = 0; i < array.length; i++) {
-            numbers[i] = (int) array[i]; // приведение
+            numbers[i] = array[i]; // (int) приведение
         }
         return numbers;
     }
@@ -31,8 +31,8 @@ public class Task2 {
         int[] startArray = convertCharToNumber(array);
         int sum = 0;
         int startArLength = startArray.length;
-        for (int i = 0; i < startArLength; i++) {
-            sum += startArray[i];
+        for (int i : startArray) { //for (int i = 0; i < startArLength; i++)
+            sum += i;
         }
         return (double) sum / startArLength; // приведение
     }
@@ -40,8 +40,8 @@ public class Task2 {
     private static int calcNewArrayLength(char[] array) {
         int length = 0;
         int averageValue = (int) calcAverage(array);
-        for (int value = 0; value < array.length; value++) {
-            if (array[value] > averageValue) {
+        for (char value : array) { //for (int value = 0; value < array.length; value++)
+            if (value > averageValue) {
                 length++;
             }
         }
@@ -53,11 +53,10 @@ public class Task2 {
         int arrayLength = calcNewArrayLength(array); //4
         int[] result = new int[arrayLength];
         int index = 0;
-        for (int i = 0; i < startArray.length; i++) {
-            if (startArray[i] > calcAverage(array)) {
-                result[index++] = startArray[i];
+        for (int i : startArray) { //for (int i = 0; i < startArray.length; i++)
+            if (i > calcAverage(array)) {
+                result[index++] = i;
             }
-
         }
         return result;
     }

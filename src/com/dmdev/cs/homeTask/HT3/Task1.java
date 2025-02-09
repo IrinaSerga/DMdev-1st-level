@@ -40,8 +40,8 @@ public class Task1 {
     // подсчет длины нового массива положительных чисел. Без него не можем инициализировать новый массив
     private static int calcNewArrayLength(int[] array) {
         int length = 0;
-        for (int value = 0; value < array.length; value++) {
-            if (array[value] > 0) {
+        for (int i : array) { //for (int value = 0; value < array.length; value++)
+            if (i > 0) {
                 length++;
             }
         }
@@ -62,8 +62,8 @@ public class Task1 {
 
     // отображение массива
     public static void printArray(int[] values) {
-        for (int i = 0; i < values.length; i++) {
-            System.out.print(values[i] + " ");
+        for (int value : values) { //for (int i = 0; i < values.length; i++)
+            System.out.print(value + " ");
 
         }
         System.out.println();

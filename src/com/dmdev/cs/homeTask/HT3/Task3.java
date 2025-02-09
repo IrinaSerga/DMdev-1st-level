@@ -21,87 +21,43 @@ public class Task3 {
     public static void main(String[] args) {
         int[] array = {-4, 0, 1, 9, 0, -18, 3};
         printArray(return2DArray(array));
-        printArray(return2DArraySecondVariant(array));
 
     }
 
-    private static int countPositiveValuesArrayLength(int[] array) {
-        int positiveCount = 0;
-        for (int value : array) {
-            if (value > 0) {
-                positiveCount++;
-            }
-        }
-        return positiveCount;
-    }
-
-    private static int countNegativeValuesArrayLength(int[] array) {
-        int negativeCount = 0;
-        for (int value : array) {
-            if (value > 0) {
-                negativeCount++;
-            }
-        }
-        return negativeCount;
-    }
-
-    private static int countZeroValuesArrayLength(int[] array) {
-        int zeroCount = 0;
-        for (int value : array) {
-            if (value > 0) {
-                zeroCount++;
-            }
-        }
-        return zeroCount;
-    }
-
-
-    private static int[][] return2DArray(int[] array) {
-        int[] negativeArray = new int[countNegativeValuesArrayLength(array)];
-        int[] positiveArray = new int[countPositiveValuesArrayLength(array)];
-        int[] zeroArray = new int[countZeroValuesArrayLength(array)];
-        int positiveIndex = 0, negativeIndex = 0, zeroIndex = 0;
-        for (int value : array) {
-            if (value > 0) {
-                positiveArray[positiveIndex++] = value;
-
-            } else if (value < 0) {
-                negativeArray[negativeIndex++] = value;
-
-            } else {
-                zeroArray[zeroIndex++] = value;
-            }
-        } return new int[][]{negativeArray, positiveArray, zeroArray};
-
-    }
 
     // отображение массива
     public static void printArray(int[][] values) {
-        for (int i = 0; i < values.length; i++) {
-            for (int j = 0; j < values[i].length; j++) {
-                System.out.print(values[i][j] + " ");
+        System.out.print("["); // начало массива
+        for (int[] value : values) { //for (int i = 0; i < values.length; i++)
+            System.out.print("["); // начало массива
+            for (int j = 0; j < value.length; j++) {
+                System.out.print(value[j]);
+                if (j < value.length - 1) { // Добавляем запятую между элементами
+                    System.out.print(", ");
+                }
             }
-
+            System.out.print("]"); // конец
         }
-        System.out.println();
+        System.out.println("]"); // конец
     }
 
-
-    /////// second variant
+    //считаем
     private static int[] countValueTypes(int[] array) {
         int positiveCount = 0, negativeCount = 0, zeroCount = 0;
         for (int value : array) {
             if (value > 0) positiveCount++;
             else if (value < 0) negativeCount++;
             else zeroCount++;
-        }  return new int[]{positiveCount, negativeCount, zeroCount};
+        }
+        return new int[]{positiveCount, negativeCount, zeroCount};
 
     }
-    private static int[][] return2DArraySecondVariant(int[] array) {
+
+    private static int[][] return2DArray(int[] array) {
         int[] counts = countValueTypes(array);
-        int[] positiveArray = new int[counts[0]];
-        int[] negativeArray = new int[counts[1]];
-        int[] zeroArray = new int[counts[2]];
+        int[] positiveArray = counts[0] > 0 ? new int[counts[0]] : new int[0];
+        int[] negativeArray = counts[1] > 0 ? new int[counts[1]] : new int[0];
+        int[] zeroArray = counts[2] > 0 ? new int[counts[2]] : new int[0];
         int positiveIndex = 0, negativeIndex = 0, zeroIndex = 0;
         for (int value : array) {
             if (value > 0) {
@@ -112,11 +68,9 @@ public class Task3 {
 
             } else {
                 zeroArray[zeroIndex++] = value;
-                if (zeroArray.length == 0) {
-                    zeroArray[zeroIndex++] = 0;
-                }
             }
-        } return new int[][]{negativeArray, positiveArray, zeroArray};
+        }
+        return new int[][]{negativeArray, positiveArray, zeroArray};
 
     }
 }
