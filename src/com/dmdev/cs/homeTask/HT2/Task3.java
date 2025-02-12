@@ -13,6 +13,13 @@ package com.dmdev.cs.homeTask.HT2;
 
 public class Task3 {
 
+//    private static final double SALARY = 600.0;
+//    private static final double SALARY_UP = 400.0;
+//    private static final int EVERY_MONTHS = 6;
+//    private static final double COSTS = 300.0;
+//    private static final double COLLECT_PCT = 10.0;
+//    private static final double BROKER_PCT = 2.0;
+
     public static void main(String[] args) {
         int year = 3;
         int month = 2;
